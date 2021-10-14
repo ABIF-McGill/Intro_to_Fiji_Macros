@@ -5,7 +5,7 @@ A 2-hour interactive workshop on learning how to program and write your own macr
 
 # What you need for this workshop
 
-Please make sure you have Fiji downloaded and installed on your computer, or download Fiji for your operating system [here](fiji.sc) - make sure it is Fiji, not simply ImageJ, since Fiji is easier to work with. 
+Please make sure you have Fiji downloaded and installed on your computer, or download Fiji for your operating system from [fiji.sc](fiji.sc) - make sure it is Fiji, not simply ImageJ, since Fiji is easier to work with. 
 
 <br>
 
