@@ -1,5 +1,6 @@
-# Intro_to_Fiji_Macros
-A 2-hour interactive workshop on learning how to program and write your own macros in Fiji. 
+# Introduction to Fiji: Programming and Writing Macros for Image analysis
+
+An *illuminate-virtual* interactive workshop offered by the ABIF   
 
 <br>
 
