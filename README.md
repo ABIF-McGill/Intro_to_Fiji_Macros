@@ -70,12 +70,64 @@ You'll also notice that each image appears to be dim, which we will adjust as we
 * In the Channels Tool, Select Channel 2
 * Click on More >> and then select Green (*even if already green...*)
 * In the B&C window, click Auto
-* Select Channel 3
 * In the Channels Tool, Select Channel 3
 * Click on More >> and then select Magenta (*easier to see for colour-blind people*)
 * In the B&C window, click Auto
 * In the Channels Tool drop-down menu, select Composite
 
 Now, this image is still a multi-plane image file - it is simply *displayed* as a composite by Fiji. To generate a single-plane image from this, click on Image > Type > RGB Color
+This will generate a new image, which is single-plane with encoded color. You can now save this locally on your computer (File > Save As > Tiff...). This saved image should open is a more useful manner in most common software.
+
+Ideally, you would want to do this on many images, not just the first one you opened. This whole process, while relatively easy, turns out to be about 15 clicks, thus, to do this on 10, 20 or 100 images would be time-consuming and tedious. So, using the information in our Record window, let's generate a macro to launch all those commands with a single click. 
+
+<br>
+
+First, in the Macro editor, on line 1, let's type in some information for us humans:
+
+<br>
+
+`// Macro to set Blue, Green and Magenta LUTs to three-channel image files and make a composite RGB image`
+
+<br>
+
+Make sure you include the two forward slashes: `//` -> this tells Fiji that this line is a comment, and will not be read as a command by Fiji. It is super useful to leave explanations or what you wrote, and why!
+
+<br>
+
+Now, let's **copy** each of these commands from our Record window and **paste** into to our Macro editor window, making sure to copy the whole line including the semi-colon `;` at the end of each line: 
+
+<br>
+
+`Stack.setChannel(1);`
+`run("Blue");`
+`run("Enhance Contrast", "saturated=0.35");`
+
+<br>
+
+`Stack.setChannel(2);`
+`run("Green");`
+`run("Enhance Contrast", "saturated=0.35");`
+
+<br>
+
+`Stack.setChannel(3);`
+`run("Magenta");`
+`run("Enhance Contrast", "saturated=0.35");`
+
+<br>
+`Stack.setDisplayMode("composite");`
+
+<br>
+
+`run("RGB Color");`
+
+
+**Importantly**, as much as possible, **please copy-paste** commands from the Record window, or other macros that work. The syntax, including the semi-colon at the end of each line, the double-quotes, and upper- vs lower-case usage needs to be exact, and the macro will not run if typos slip in due to retyping.
+
+
+
+
+
+
 
 
