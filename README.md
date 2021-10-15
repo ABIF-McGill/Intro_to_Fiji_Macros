@@ -1,6 +1,6 @@
 # Introduction to Fiji: Programming and Writing Macros for Image analysis
 
-An *illuminate-virtual* interactive workshop offered by the ABIF   
+An *illuminate-virtual* interactive workshop organized by the ABIF, taking place online on October 21 2021.
 
 <br>
 
