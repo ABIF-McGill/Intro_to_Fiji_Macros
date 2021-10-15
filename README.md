@@ -131,6 +131,9 @@ Now, let's **copy** each of these commands from our Record window and **paste** 
 
 **Importantly**, as much as possible, **please copy-paste** commands from the Record window, or other macros that work. The syntax, including the semi-colon at the end of each line, the double-quotes, and upper- vs lower-case usage needs to be exact, and the macro will not run if typos slip in due to retyping.
 
+<br>
+
+Let's try it out. Open another image from the demo-images folder (e.g demo_DAPI_Phalloidin_Mitotracker_009.tif), click on the Macro editor window, and click Run. 
 
 
 
