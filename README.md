@@ -135,6 +135,33 @@ Now, let's **copy** each of these commands from our Record window and **paste** 
 
 Let's try it out. Open another image from the demo-images folder (e.g demo_DAPI_Phalloidin_Mitotracker_009.tif), click on the Macro editor window, and click Run. 
 
+<br>
+
+For this simple macro, that simply generates a new image file, it can be run on a folder of images using the Batch function in Fiji. Batch processing reduces the amount of clicks and potential human mistakes even further, since it will apply the same function to a whole folder, and saves the resulting images in a new folder, with the same filenames.
+
+<br>
+
+* Click on Process > Batch > Macro
+* Click on Input, and navigate to the folder containing the demo images
+* Click on Output, and create a new folder to store the RGB images that will be created
+* Output format: TIFF, and leave the two other dropdown menus unchanged
+* In the Macro editor, select all the lines of code, and copy them (Ctrl-C or Edit > Copy)
+* Paste the code into the large text field in the Batch Process window
+* Click Process
+
+Fiji will then apply apply this function to all images in the selected input folder, and save as new Tiff images in the Output folder. 
+
+<br>
+
+*Et voilà*, you just wrote a very simple macro and managed to run it on a folder of images! 
+
+<br>
+
+A few things to note. Fiji will attemps to run your script *as is* on the image files in your folder. In this regard, the script we just wrote is not very robust, since if you try to run it on an image that does not read have at least three channels, it will fail. For example, if you try to run this exact macro on an image with two channels, it will throw an error when it reaches the command:
+
+`Stack.setChannel(3);`
+
+because Channel number 3 does not exist in a two-channel image...
 
 
 
