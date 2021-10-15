@@ -99,22 +99,29 @@ Now, let's **copy** each of these commands from our Record window and **paste** 
 <br>
 
 `Stack.setChannel(1);`
+
 `run("Blue");`
+
 `run("Enhance Contrast", "saturated=0.35");`
 
 <br>
 
 `Stack.setChannel(2);`
+
 `run("Green");`
+
 `run("Enhance Contrast", "saturated=0.35");`
 
 <br>
 
 `Stack.setChannel(3);`
+
 `run("Magenta");`
+
 `run("Enhance Contrast", "saturated=0.35");`
 
 <br>
+
 `Stack.setDisplayMode("composite");`
 
 <br>
