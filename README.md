@@ -51,7 +51,7 @@ In order to generate images that we can display and visualize in these software,
 
 We'll do this first "manually" in Fiji to record the commands using on of the demo images, then we will paste them into the macro window. 
 
-First, we'll get or Record window, and our Macro editor window open:
+First, we'll get our Record window and our Macro editor window open:
 * Click on Plugins > Macros > Record...  -> make sure the drop-down menu next to Record: says Macro
 * Click on Plugins > New > Macro  -> Click on Language, and set it to IJ1 Macro
 
@@ -162,6 +162,78 @@ A few things to note. Fiji will attemps to run your script *as is* on the image 
 `Stack.setChannel(3);`
 
 because Channel number 3 does not exist in a two-channel image...
+
+Other potential issues with copy-pasting from the Recorder will be further discussed as we go. In most cases, these are relatively easily addressed by making the scripts a bit more general...
+
+<br>
+
+
+<br>
+
+## Exercise 2 - Segmentation of DAPI stained nuclei, and intensity measurements from other channels
+
+In this exercise, we'll go through a commonly used sequence of functions to perform segmentation of objects (in this case, nuclei), store the shapes of the nuclei, and then measure intensity information within the are of those nuclei in other channels.
+
+<br>
+
+
+Like in the previous exercise, we'll get need our Record window and our Macro editor window open. If Macro editor is already open and you already have a macro going, simply create a new macro tab with File > New, and make sure the language is IJ1 Macro
+
+Then we'll open and process one image file:
+* Open an image from the demo images (e.g demo_DAPI_Phalloidin_Mitotracker_001.tif)
+
+
+It is often easier to work on images separately from their original stack. Since we'll be applying a threshold to the DAPI image only, we'll duplicate that image from the stack, and apply functions there.
+
+* With the image open, make sure you set the first channel (with the scroll bar below the image), showing DAPI nuclei. 
+* Click on Image > Duplicate, and uncheck the "Duplicate Hyperstack" box - then click OK
+
+This will create a new image with only one channel, which should be DAPI.
+
+Usually, for segmentation purposes, we tend to apply a few convolution filters to help deal with noise (Median filter), or to blur the image to accentuate objects of a certain size (Gaussian blur). We will not be discussing convolution filters such as these in this workshop, so please make sure you are somewhat familiar with these...
+
+* On the newly duplicated image, we'll apply a Median Filter: Process > Filters > Median...
+* In the window, change the size to 1 pixel (make sure pixel units are selected), and click OK
+
+The median filter will help suppress noise in the image. While it is not critically important for these demo images, it is a commonly used processing step that is worth being aware of. 
+
+Then, we will apply a Gaussian Blur filter, which will substantially blur the image - don't worry, this is ok!
+
+* Click Process > Filters > Gaussian Blur... 
+* Change the size to 7 pixels (make sure pixel units are selected), and click OK
+
+This generates a much more blurry image, which quells small objects and noise, thereby accentuating larger objects.
+
+Now we'll apply a threshold, using the Otsu algorithm. The Otsu algorithm tries to find the trough/valley between a population of low-intensity pixels (such as the low-intensity space between cells) and a population of high-intensity pixels (in this case, the DAPI nuclei). 
+
+* Click on Image > Adjust > Threshold
+* Make sure Dark Background is selected
+* From the method menu, select Otsu
+* Click Apply
+
+This will generate a binary image, where each pixel has either a value of 0 (representing background) or 255 if they were above the calculated threshold. It is now easy for the computer to find objects when there are only two values -> objects will have a value of 255.
+
+From here, we want to have each closed continuous structure identified as an object, and store the position and shape of these objects, to then measure intensity in other channels.
+
+* Click on Analyze > Analyze Particles...
+* It's worth setting a size limit: for today, let's say 900-Infinity, and check the Pixel Units box
+* Check "Add to Manager" and "Exclude on edges"
+* Click OK
+
+This will find all continuous objects within the given size limits, and store their position and information as Regions Of Interest (ROIs) in the ROI manager.
+
+Now, let's go measure the intensity of the phalloidin channel within those nucleus areas!
+
+* Click on the original three-channel image
+* Select channel 2 using the horizontal scroll bar at the bottom of the image
+* Click on the first ROI in the ROI manager, and click the Measure button
+
+A Results Table will pop up, containing intensity information within the ROI
+
+* Click again on the original image
+* Click on the second ROI in the ROI manager, and click Measure...
+
+Repeat this with each ROI! 
 
 
 
