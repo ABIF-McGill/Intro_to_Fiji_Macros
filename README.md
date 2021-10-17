@@ -236,7 +236,16 @@ A Results Table will pop up, containing intensity information within the ROI
 Repeat this with each ROI! 
 
 
+<br>
+
+<br>
+
+## Exercise 3 - Streamlining manual analysis when automation isn't working...
+
+<br>
 
 
+Often, it is helpful to perform some manual analysis on cells before trying automated methods. For example, it might be worth manually drawing ROIs and measuring the intensity of a few cells to get an idea of what the intensities are, what is the background, whether one filter made be better than another, etc.
 
+In other cases, it is simply too difficult to write a fully automated script, since one or more steps are too challenging for the computer to perform algorithmically. For example, segmenting objects that are very dim or tightly packed together is much more difficult than segmenting DAPI-stained nuclei in sparse cells... 
 
