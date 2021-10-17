@@ -26,7 +26,11 @@ This is a pretty broad goal. This can mean performing the same task over and ove
 
 <br>
 
-## How to write macros in Fiji
+## How we'll approach writing macros in Fiji in this workshop
+
+<br>
+
+For this workshop, we'll mostly aim to re-create actual image processing and analysis tasks in a written macro. 
 
 <br>
 
@@ -34,9 +38,10 @@ This is a pretty broad goal. This can mean performing the same task over and ove
 * Click on Plugins > Macros > Record...  -> make sure the drop-down menu next to Record: says Macro
 * Click on Plugins > New > Macro  -> Click on Language, and set it to IJ1 Macro
 
-To write a simple macro from scratch, the easiest is to open an image, perform the processing/analysis functions once in order (e.g. reset contrast, apply colours to different channels,  run a gaussian blur on the image, create a projection, etc). Then, try to find each of the relevant commands for each function in the Record window, and copy-paste these commands into the Macro window. Then, we can open another file meant to be processed the same way, and use the newly written macro by selecting the image and then clicking Run in the Macro window, to process the image in this way. 
+To write a simple macro from scratch, the easiest is to open an image, perform the processing/analysis functions once in order (e.g. reset contrast, apply colours to different channels, run a gaussian blur on the image, create a projection, etc). Then, try to find each of the relevant commands for each function in the Record window, and copy-paste these commands into the Macro window. Then, we can open another file meant to be processed the same way, and use the newly written macro by selecting the image and then clicking Run in the Macro window, to process the image in this way. 
 
-We'll do this in exercise 1, where we will generate a few commands using the record functions, and paste them into a macro to run all these steps with a single click.
+We'll do this in exercises 1 and 2, where we will generate a few commands using the record functions, and paste them into a macro to run all these steps with a single click.
+
 
 <br>
 
@@ -259,7 +264,15 @@ For this, we'll write a script that:
 
 This might seem silly, but it makes manual analysis so much easier to tackle - you'll end up analysing more cells with less frustration, in less time!
 
+<br>
 
+## Some closing thoughts
+
+<br>
+
+We hope you enjoyed this workshop, and hopefully it helped guide you or give you ideas for processing and analysis pipelines that would be helpful to your work. We hope you give it a try, and we at the facility are happy to help out if you run into some obstacles while writing these things. 
+
+<br>
 
 
 
