@@ -249,3 +249,18 @@ Often, it is helpful to perform some manual analysis on cells before trying auto
 
 In other cases, it is simply too difficult to write a fully automated script, since one or more steps are too challenging for the computer to perform algorithmically. For example, segmenting objects that are very dim or tightly packed together is much more difficult than segmenting DAPI-stained nuclei in sparse cells... 
 
+Thus, when doing manual analysis, it is very helpful to write a macro that helps with the "mundane" aspect of analysis - usually the clicks involved in opening and closing files. 
+
+For this, we'll write a script that:
+* Asks you to select a folder of images to analyse
+* Opens the first image in the folder
+* Waits for you to perform a measurement of some kind (for example, trace the outline of a cell)
+* Stores the information, closes the image, and loads the next image.
+
+This might seem silly, but it makes manual analysis so much easier to tackle - you'll end up analysing more cells with less frustration, in less time!
+
+
+
+
+
+
