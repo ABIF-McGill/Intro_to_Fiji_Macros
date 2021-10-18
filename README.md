@@ -10,19 +10,43 @@ Please make sure you have Fiji downloaded and installed on your computer, or dow
 
 <br>
 
-**Please download the demo image sets from this repository** click on the green Code button, and then "Download ZIP". Then, you can extract images (ending in .tif) in Windows / OS X.
+**Please download the demo image sets from this repository** by clicking on the green Code button, and then "Download ZIP". Then, you can extract images (ending in .tif) in Windows / OS X.
+
+<br>
+
+## Recommended videos
+
+Before the workshop, please give this readme file a quick read, and make sure you generally understand what we will be doing. 
+
+<br>
+
+If you have never worked with Fiji, or are very unfamiliar with fluorescence images, please check out a few introductory videos to using Fiji:
+
+* [Bioimage Analysis with Fiji](https://www.youtube.com/embed/Akedfyp5AxY) and [Filters and Segmentation](https://www.youtube.com/embed/LT8L3vSLQ2Q?start=0&end=1712) are two fantastic talks by Robert Haase introducing Fiji and some analysis functions
+
+* [Introduction to Fiji/ImageJ](https://www.youtube.com/watch?v=3Yfk9yjt3CA&t=120s) is a virtual illuminate workshop we held in May 2020, using data and a general guide found [in this repository](https://github.com/ABIF-McGill/IPN_summer_course_2021), where participants performed some of the functions discussed in the aforementioned talks
+
+<br>
+
+Other resources include:
+* [ImageJ Macro Language](https://imagej.nih.gov/ij/developer/macro/macros.html) - general macro introductory resource
+* [Built-in Macro Functions](https://imagej.nih.gov/ij/developer/macro/functions.html) - an exhaustive list of standard ImageJ Macro language functions
+* [image.sc](https://forum.image.sc/) - a friendly community forum to ask questions about image processing, analysis and scripting
+
+<br>
+
 
 <br>
 
 ## Why do biologists write macros/script in Fiji?
 
-Fiji allows you to manipulate image data in a myriad of ways to extract biologically relevant information from microscope images. Writing macros can help streamline data processing, extraction and analysis.
+Fiji allows you to manipulate image data in a myriad of ways to extract biologically relevant information from microscope images. Traditionally, this is done using the graphical user interface (GUI), where you point and click on the different functions that you want to apply to your images. Writing macros helps streamline data processing, extraction and analysis.
 
 Quite simply, the goal of writing macros is the reduce the amount of work and number of clicks required by the user to process images and extract meaningful information. Two main benefits emerge from such streamlining: 1) it makes data processing or analysis much easier, or much less daunting, 2) it can reduce the frequency of human error when analysing multiple images, by reliably applying the same sequence of functions on a set of images. 
 
 As an added indirect benefit, learning how to write macros in Fiji is often an easier and more pragmatic introduction to the basics of programming for scientists without an extensive background in programming or computer science. 
 
-This is a  broad goal. This can mean performing the same task over and over on a folder of images, or reduce multiples tasks into a macro that is launched by a single click. Note that the goal is not necessarily to “automate analysis”, though automation is often sought after. 
+This is a broad goal. This can mean performing the same task over and over on a folder of images, or reduce multiples tasks into a macro that is launched by a single click. Note that the goal is not necessarily to “automate analysis”, though automation is often sought after. 
 
 <br>
 
@@ -30,7 +54,7 @@ This is a  broad goal. This can mean performing the same task over and over on a
 
 <br>
 
-For this workshop, we'll mostly aim to re-create actual image processing and analysis tasks in a written macro. 
+For this workshop, we'll mostly aim to re-create actual image processing and analysis tasks in a written macro. We'll be using the ImageJ macro language, since it is the easiest to work with in this context.
 
 <br>
 
@@ -44,6 +68,30 @@ We'll do this in exercises 1 and 2, where we will generate a few commands using 
 
 
 <br>
+
+<br> 
+
+## Syntax syntax syntax!!!
+
+One last thing before we jump into the exercises... The ImageJ macro language, like most programming languages is **extremely** sensitive to syntax. Commands, variable names, functions are case-sensitive, and the usage of organizational characters like quotes " " and brackets () are strict. For these reasons, we recommend not typing out commands from scratch, but rather use copy-paste from a proper source (i.e. the Record window, or another script that you know runs properly). 
+
+For example:
+
+`run("Green");`
+
+will change the lookup table of an active image to the green lookup table - this is often used in a fluorescence image of a green fluorophore such as eGFP. 
+
+The following commands will fail, throw an error, and terminate the script:
+
+`run("green");`
+> Unregonized command: "green" in line 1
+
+`run["Green"];`
+> '(' expected in line 1 
+
+
+
+
 
 
 ## Exercise 1 - Make a composite image from multi-channel image files
@@ -240,8 +288,9 @@ A Results Table will pop up, containing intensity information within the ROI
 
 Repeat this with each ROI! 
 
-
 <br>
+
+Now, let's write a macro to run all these functions sequentially, by copy-pasting from our Record window. Here, you'll notice a couple of issues that we have to deal with. Give it a try - the lines of code will be pasted before the workshop, and we'll walk through it together!
 
 <br>
 
@@ -266,7 +315,19 @@ This might seem silly, but it makes manual analysis so much easier to tackle - y
 
 <br>
 
+For this, we'll write a for-loop to cycle through a folder of images, and we'll use the `waitForUser();` function to pause the script while we perform a measurement. After the image opens, it will be up to you to perform a measurement - maybe you wish to trace the shape of the nuclei, maybe you try to find the longest actin filament in focus, or the furthest mitochondria from the nucleus. Or maybe this is a quality control pre-processing step, where you make a list of good quality images which you will use for downstream analysis...
+
+<br>
+
 ## Some closing thoughts
+
+<br>
+
+As you move forward with writing these macros, you'll develop some tricks, some blocks of code that you'll re-use in many different scripts. You'll also develop an intuition for the type of information you can get from your images, as well as "incidental data". For example, in exercise 2, we thresholded DAPI-stained nuclei to measure intensity. With that data, assuming the thresholding went well, we also have the number of cells per image and thus we can compute the cell density per image, since we know the dimensions of the image. Finally, we often save the xy coordinates of the cells, which allows us to investigate potential spatial relatioships between the cells ("do cells in close proximity to each other express a protein of interest at similar levels?")...
+
+<br>
+
+There is still of course lots to cover, from the underlying computer logic, to dealing with other issues that arise while writing these macros and experiment-specific questions, how the analysis methods then influence how to acquire new data, and figuring out what to do with the data you extracted...
 
 <br>
 
