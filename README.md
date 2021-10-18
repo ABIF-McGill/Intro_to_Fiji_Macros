@@ -22,7 +22,7 @@ Quite simply, the goal of writing macros is the reduce the amount of work and nu
 
 As an added indirect benefit, learning how to write macros in Fiji is often an easier and more pragmatic introduction to the basics of programming for scientists without an extensive background in programming or computer science. 
 
-This is a pretty broad goal. This can mean performing the same task over and over on a folder of images, or reduce multiples tasks into a macro that is launched by a single click. Note that the goal is not necessarily to “automate analysis”, though automation is often sought after. 
+This is a  broad goal. This can mean performing the same task over and over on a folder of images, or reduce multiples tasks into a macro that is launched by a single click. Note that the goal is not necessarily to “automate analysis”, though automation is often sought after. 
 
 <br>
 
@@ -154,7 +154,7 @@ For this simple macro, that simply generates a new image file, it can be run on 
 * Paste the code into the large text field in the Batch Process window
 * Click Process
 
-Fiji will then apply apply this function to all images in the selected input folder, and save as new Tiff images in the Output folder. 
+Fiji will then apply this function to all images in the selected input folder, and save as new Tiff images in the Output folder. 
 
 <br>
 
@@ -162,7 +162,7 @@ Fiji will then apply apply this function to all images in the selected input fol
 
 <br>
 
-A few things to note. Fiji will attemps to run your script *as is* on the image files in your folder. In this regard, the script we just wrote is not very robust, since if you try to run it on an image that does not read have at least three channels, it will fail. For example, if you try to run this exact macro on an image with two channels, it will throw an error when it reaches the command:
+A few things to note. Fiji will attempt to run your script *as is* on the image files in your folder. In this regard, the script we just wrote is not very robust, since if you try to run it on an image that does not read have at least three channels, it will fail. For example, if you try to run this exact macro on an image with two channels, it will throw an error when it reaches the command:
 
 `Stack.setChannel(3);`
 
@@ -225,7 +225,7 @@ From here, we want to have each closed continuous structure identified as an obj
 * Check "Add to Manager" and "Exclude on edges"
 * Click OK
 
-This will find all continuous objects within the given size limits, and store their position and information as Regions Of Interest (ROIs) in the ROI manager.
+This will find all continuous objects within the given size limits and store their position and information as Regions Of Interest (ROIs) in the ROI manager.
 
 Now, let's go measure the intensity of the phalloidin channel within those nucleus areas!
 
@@ -250,7 +250,7 @@ Repeat this with each ROI!
 <br>
 
 
-Often, it is helpful to perform some manual analysis on cells before trying automated methods. For example, it might be worth manually drawing ROIs and measuring the intensity of a few cells to get an idea of what the intensities are, what is the background, whether one filter made be better than another, etc.
+Often, it is helpful to perform some manual analysis on cells before trying automated methods. For example, it might be worth manually drawing ROIs and measuring the intensity of a few cells to get an idea of what the intensities are, what is the background, whether one filter may be better than another, etc.
 
 In other cases, it is simply too difficult to write a fully automated script, since one or more steps are too challenging for the computer to perform algorithmically. For example, segmenting objects that are very dim or tightly packed together is much more difficult than segmenting DAPI-stained nuclei in sparse cells... 
 
@@ -270,7 +270,7 @@ This might seem silly, but it makes manual analysis so much easier to tackle - y
 
 <br>
 
-We hope you enjoyed this workshop, and hopefully it helped guide you or give you ideas for processing and analysis pipelines that would be helpful to your work. We hope you give it a try, and we at the facility are happy to help out if you run into some obstacles while writing these things. 
+We hope you enjoyed this workshop, and hopefully it helped guide you or give you ideas for processing and analysis pipelines that would be helpful to your work. We hope you give it a try, and we at the facility are happy to help out if you run into some obstacles while writing these macros. 
 
 <br>
 
