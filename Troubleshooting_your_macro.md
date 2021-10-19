@@ -59,6 +59,7 @@ For example:
 
 ```
 // first let's create a variable called "my_variable" in which we will store the string "This is a string"
+
 my_variable = "This is a string";
 
 //let's print this variable in the log window
