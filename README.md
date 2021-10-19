@@ -116,30 +116,33 @@ In order to generate images that we can display and visualize in these software,
 We'll do this first "manually" in Fiji to record the commands using on of the demo images, then we will paste them into the macro window. 
 
 First, we'll get our Record window and our Macro editor window open:
-* Click on Plugins > Macros > Record...  -> make sure the drop-down menu next to Record: says Macro
-* Click on Plugins > New > Macro  -> Click on Language, and set it to IJ1 Macro
+> * Click on Plugins > Macros > Record...  -> make sure the drop-down menu next to Record: says Macro
+> * Click on Plugins > New > Macro  -> Click on Language, and set it to IJ1 Macro
 
 Then we'll open and process one image file:
-* Open an image from the demo images (e.g demo_DAPI_Phalloidin_Mitotracker_001.tif)
-* Open the Channels Tool in Image > Colors > Channels Tool... 
-* In the Channels Tool drop-down menu, select Color
+> * Open an image from the demo images (e.g demo_DAPI_Phalloidin_Mitotracker_001.tif)
+> * Open the Channels Tool in Image > Colors > Channels Tool... 
+> * In the Channels Tool drop-down menu, select Color
 
 At this point, you'll notice that the first channel is display with a red lookup table (LUT). This first channel is DAPI, and so typically it's more intuitive to display it in blue (or Cyan). If you check the second channel, it is green, which is fine, and then the third channel for Mitotracker is blue, which isn't ideal. 
 
 You'll also notice that each image appears to be dim, which we will adjust as well. Click on Image > Adjust > Brightness & Contrast
 
-* In the Channels Tool, Select Channel 1
-* Click on More >> and then select Blue
-* In the B&C window, click Auto
-* In the Channels Tool, Select Channel 2
-* Click on More >> and then select Green (*even if already green...*)
-* In the B&C window, click Auto
-* In the Channels Tool, Select Channel 3
-* Click on More >> and then select Magenta (*easier to see for colour-blind people*)
-* In the B&C window, click Auto
-* In the Channels Tool drop-down menu, select Composite
+> * In the Channels Tool, Select Channel 1
+> * Click on More >> and then select Blue
+> * In the B&C window, click Auto
+> * In the Channels Tool, Select Channel 2
+> * Click on More >> and then select Green (*even if already green...*)
+> * In the B&C window, click Auto
+> * In the Channels Tool, Select Channel 3
+> * Click on More >> and then select Magenta (*easier to see for colour-blind people*)
+> * In the B&C window, click Auto
+> * In the Channels Tool drop-down menu, select Composite
 
-Now, this image is still a multi-plane image file - it is simply *displayed* as a composite by Fiji. To generate a single-plane image from this, click on Image > Type > RGB Color
+Now, this image is still a multi-plane image file - it is simply *displayed* as a composite by Fiji. To generate a single-plane image from this, 
+
+> click on Image > Type > RGB Color
+
 This will generate a new image, which is single-plane with encoded color. You can now save this locally on your computer (File > Save As > Tiff...). This saved image should open is a more useful manner in most common software.
 
 Ideally, you would want to do this on many images, not just the first one you opened. This whole process, while relatively easy, turns out to be about 15 clicks, thus, to do this on 10, 20 or 100 images would be time-consuming and tedious. So, using the information in our Record window, let's generate a macro to launch all those commands with a single click. 
@@ -193,13 +196,13 @@ For this simple macro, that simply generates a new image file, it can be run on 
 
 <br>
 
-* Click on Process > Batch > Macro
-* Click on Input, and navigate to the folder containing the demo images
-* Click on Output, and create a new folder to store the RGB images that will be created
-* Output format: TIFF, and leave the two other dropdown menus unchanged
-* In the Macro editor, select all the lines of code, and copy them (Ctrl-C or Edit > Copy)
-* Paste the code into the large text field in the Batch Process window
-* Click Process
+> * Click on Process > Batch > Macro
+> * Click on Input, and navigate to the folder containing the demo images
+> * Click on Output, and create a new folder to store the RGB images that will be created
+> * Output format: TIFF, and leave the two other dropdown menus unchanged
+> * In the Macro editor, select all the lines of code, and copy them (Ctrl-C or Edit > Copy)
+> * Paste the code into the large text field in the Batch Process window
+> * Click Process
 
 Fiji will then apply this function to all images in the selected input folder, and save as new Tiff images in the Output folder. 
 
@@ -237,53 +240,53 @@ Then we'll open and process one image file:
 
 It is often easier to work on images separately from their original stack. Since we'll be applying a threshold to the DAPI image only, we'll duplicate that image from the stack, and apply functions there.
 
-* With the image open, make sure you set the first channel (with the scroll bar below the image), showing DAPI nuclei. 
-* Click on Image > Duplicate, and uncheck the "Duplicate Hyperstack" box - then click OK
+> * With the image open, make sure you set the first channel (with the scroll bar below the image), showing DAPI nuclei. 
+> * Click on Image > Duplicate, and uncheck the "Duplicate Hyperstack" box - then click OK
 
 This will create a new image with only one channel, which should be DAPI.
 
 Usually, for segmentation purposes, we tend to apply a few convolution filters to help deal with noise (Median filter), or to blur the image to accentuate objects of a certain size (Gaussian blur). We will not be discussing convolution filters such as these in this workshop, so please make sure you are somewhat familiar with these...
 
-* On the newly duplicated image, we'll apply a Median Filter: Process > Filters > Median...
-* In the window, change the size to 1 pixel (make sure pixel units are selected), and click OK
+> * On the newly duplicated image, we'll apply a Median Filter: Process > Filters > Median...
+> * In the window, change the size to 1 pixel (make sure pixel units are selected), and click OK
 
 The median filter will help suppress noise in the image. While it is not critically important for these demo images, it is a commonly used processing step that is worth being aware of. 
 
 Then, we will apply a Gaussian Blur filter, which will substantially blur the image - don't worry, this is ok!
 
-* Click Process > Filters > Gaussian Blur... 
-* Change the size to 7 pixels (make sure pixel units are selected), and click OK
+> * Click Process > Filters > Gaussian Blur... 
+> * Change the size to 7 pixels (make sure pixel units are selected), and click OK
 
 This generates a much more blurry image, which quells small objects and noise, thereby accentuating larger objects.
 
 Now we'll apply a threshold, using the Otsu algorithm. The Otsu algorithm tries to find the trough/valley between a population of low-intensity pixels (such as the low-intensity space between cells) and a population of high-intensity pixels (in this case, the DAPI nuclei). 
 
-* Click on Image > Adjust > Threshold
-* Make sure Dark Background is selected
-* From the method menu, select Otsu
-* Click Apply
+> * Click on Image > Adjust > Threshold
+> * Make sure Dark Background is selected
+> * From the method menu, select Otsu
+> * Click Apply
 
 This will generate a binary image, where each pixel has either a value of 0 (representing background) or 255 if they were above the calculated threshold. It is now easy for the computer to find objects when there are only two values -> objects will have a value of 255.
 
 From here, we want to have each closed continuous structure identified as an object, and store the position and shape of these objects, to then measure intensity in other channels.
 
-* Click on Analyze > Analyze Particles...
-* It's worth setting a size limit: for today, let's say 900-Infinity, and check the Pixel Units box
-* Check "Add to Manager" and "Exclude on edges"
-* Click OK
+> * Click on Analyze > Analyze Particles...
+> * It's worth setting a size limit: for today, let's say 900-Infinity, and check the Pixel Units box
+> * Check "Add to Manager" and "Exclude on edges"
+> * Click OK
 
 This will find all continuous objects within the given size limits and store their position and information as Regions Of Interest (ROIs) in the ROI manager.
 
 Now, let's go measure the intensity of the phalloidin channel within those nucleus areas!
 
-* Click on the original three-channel image
-* Select channel 2 using the horizontal scroll bar at the bottom of the image
-* Click on the first ROI in the ROI manager, and click the Measure button
+> * Click on the original three-channel image
+> * Select channel 2 using the horizontal scroll bar at the bottom of the image
+> * Click on the first ROI in the ROI manager, and click the Measure button
 
 A Results Table will pop up, containing intensity information within the ROI
 
-* Click again on the original image
-* Click on the second ROI in the ROI manager, and click Measure...
+> * Click again on the original image
+> * Click on the next ROI in the ROI manager, and click Measure...
 
 Repeat this with each ROI! 
 
