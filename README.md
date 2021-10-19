@@ -162,36 +162,24 @@ Now, let's **copy** each of these commands from our Record window and **paste** 
 
 <br>
 
-`Stack.setChannel(1);`
+```
+Stack.setChannel(1);
+run("Blue");
+run("Enhance Contrast", "saturated=0.35");
 
-`run("Blue");`
+Stack.setChannel(2);
+run("Green");
+run("Enhance Contrast", "saturated=0.35");
 
-`run("Enhance Contrast", "saturated=0.35");`
+Stack.setChannel(3);
+run("Magenta");
+run("Enhance Contrast", "saturated=0.35");
 
-<br>
 
-`Stack.setChannel(2);`
+Stack.setDisplayMode("composite");
 
-`run("Green");`
-
-`run("Enhance Contrast", "saturated=0.35");`
-
-<br>
-
-`Stack.setChannel(3);`
-
-`run("Magenta");`
-
-`run("Enhance Contrast", "saturated=0.35");`
-
-<br>
-
-`Stack.setDisplayMode("composite");`
-
-<br>
-
-`run("RGB Color");`
-
+run("RGB Color"); 
+```
 
 **Importantly**, as much as possible, **please copy-paste** commands from the Record window, or other macros that work. The syntax, including the semi-colon at the end of each line, the double-quotes, and upper- vs lower-case usage needs to be exact, and the macro will not run if typos slip in due to retyping.
 
