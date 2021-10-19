@@ -77,7 +77,14 @@ We'll do this in exercises 1 and 2, where we will generate a few commands using 
 
 ## Syntax syntax syntax!!!
 
-One last thing before we jump into the exercises... The ImageJ macro language, like most programming languages is **extremely** sensitive to syntax. Commands, variable names, functions are case-sensitive, and the usage of organizational characters like quotes " " and brackets () are strict. For these reasons, we recommend not typing out commands from scratch, but rather use copy-paste from a proper source (i.e. the Record window, or another script that you know runs properly). 
+One last thing before we jump into the exercises... The ImageJ macro language, like most programming languages is **extremely** sensitive to syntax. 
+
+Commands, variable names, functions are **case-sensitive**, and the usage of organizational characters is quite strict: 
+
+* quotes " " 
+* brackets (), [], or {}
+
+Thus, we recommend not typing out commands from scratch, but rather use copy-paste from a proper source (i.e. the Record window, or another script that you know runs properly). 
 
 For example:
 
