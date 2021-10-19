@@ -1,12 +1,14 @@
 # Introduction to Fiji: Programming and Writing Macros for Image analysis
 
-An *illuminate-virtual* interactive workshop organized by the ABIF, taking place online on October 21 2021.
+An *illuminate-virtual* interactive workshop organized by the [ABIF](https://www.mcgill.ca/abif/), taking place online on October 21 2021, 2pm - 4pm EST.
 
 <br>
 
 # What you need for this workshop
 
-Please make sure you have Fiji downloaded and installed on your computer, or download Fiji for your operating system from [fiji.sc](https://fiji.sc/) - make sure it is Fiji, not simply ImageJ, since Fiji is easier to work with. Installation and updates can take a few minutes, so please have this ready before the start of the class.
+Please make sure you have Fiji downloaded and installed on your computer, or download Fiji for your operating system from [fiji.sc](https://fiji.sc/)  
+
+--make sure it is Fiji, not simply ImageJ, since Fiji is easier to work with. Installation and updates can take a few minutes, so please have this ready before the start of the workshop.
 
 <br>
 
