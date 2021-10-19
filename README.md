@@ -26,7 +26,10 @@ If you have never worked with Fiji, or are very unfamiliar with fluorescence ima
 
 * [Introduction to Fiji/ImageJ](https://www.youtube.com/watch?v=3Yfk9yjt3CA&t=120s) is a virtual illuminate workshop we held in May 2020, using data and a general guide found [in this repository](https://github.com/ABIF-McGill/IPN_summer_course_2021), where participants performed some of the functions discussed in the aforementioned talks
 
+
+
 <br>
+
 
 Other resources include:
 * [ImageJ Macro Language](https://imagej.nih.gov/ij/developer/macro/macros.html) - general macro introductory resource
@@ -35,6 +38,7 @@ Other resources include:
 
 <br>
 
+This workshop is not the only game in town! There are lots of great resources and videos for developing script-writing skills!
 
 <br>
 
