@@ -57,12 +57,14 @@ This happens when a variable is called in a function, but that variable doesn't 
 
 For example:
 
-// first let's create a variable called "my_variable"
+```
+// first let's create a variable called "my_variable" in which we will store the string "This is a string"
 my_variable = "This is a string";
 
 //let's print this variable in the log window
 print(my_variable); // this will work
 print(my_Variable); // this would throw an "Undefined variable" error - variable names are case-sensitive
+```
 
 <br>
 
@@ -72,19 +74,24 @@ print(my_Variable); // this would throw an "Undefined variable" error - variable
 If the script can't find a command, it will throw an "Unrecognised command", usually due to a typo while typing the command.
 
 For example:
+```
 run("Green"); // this will work, since "Green" is a command that exists in 
 run("green"); // this would throw a Unrecognised command error, due to the lower case g
-
+```
 
 ## error message: ")" expected
 
 The script is indicating that a certain function requires a bracket to close the arguments, and that bracket is somehow missing...
 
-For example:
-
+For example, if you try each line individually:
+```
 print("this is a string"); // this will work
 
 print("this is a string"; // this will not work, since the closing bracket ) is missing
 print("this is a string)"; // this will not work, since the closing bracket ) is inside the string and will not be read as closing the arguments to that function
 print("this is a string); // this will not work, since the closing bracket ) is inside an incomplete string (missing quotes to close the string)
+```
 
+<br>
+
+...more error examples to come!
