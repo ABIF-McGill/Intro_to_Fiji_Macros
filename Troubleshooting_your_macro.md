@@ -62,7 +62,9 @@ For example:
 
 my_variable = "This is a string";
 
+
 //let's print this variable in the log window
+
 print(my_variable); // this will work
 print(my_Variable); // this would throw an "Undefined variable" error - variable names are case-sensitive
 ```
