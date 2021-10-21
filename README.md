@@ -12,7 +12,14 @@ Please make sure you have Fiji downloaded and installed on your computer, or dow
 
 <br>
 
+![image](https://user-images.githubusercontent.com/64212264/137986096-b68d5a8d-b4c3-4812-b15f-a74eeb6c8a06.png)
+
+
+<br>
+
 **Please download the demo image sets from this repository** by clicking on the green Code button, and then "Download ZIP". Then, you can extract images (ending in .tif) in Windows / OS X.
+
+
 
 <br>
 
