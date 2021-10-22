@@ -42,7 +42,16 @@ While this might be a bit abstract at first, you'll slowly get used to recognisi
 
 ## Check for semi-colons at the end of each line
 
-This may have changed by now, but it was required to have a ; at the end of each line, except for statements such as for, if, else, while, which use curly braces {}
+This may have changed by now, but it was required to have a ; at the end of each line, except for loop or conditional statements (for, if, else, while) which use curly braces {}
+
+
+<br>
+
+## Check for curly braces
+
+Statements such as `for`, `while`, `if` and `else` conditional operate on the contents inside curly braces { } 
+
+Make each statement has its pair of opening and closing curly braces, which are easy to forget, especially when they are nested.
 
 
 <br>
