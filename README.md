@@ -231,6 +231,16 @@ Other potential issues with copy-pasting from the Recorder will be further discu
 
 <br>
 
+**Potential upgrades to Exercise 1**
+
+1) The macro written in exercise one only works on three-channel images, and as mentioned earlier, will fail if the image has fewer than 3 channels. How would you "make it work" if images have a different number of channels? 
+
+One way would be simply to check if the opened image has indeed three channels. First, you would need to determine the number of channels in the image. For this, have a look at the **getDimensions** function. Then once you have that, you could consider using an **if statement**. You could write an expression that essentially translates to "**if** the image has three channels, then set the LUTs and contrast, otherwise do nothing".
+
+
+2) What if you had timelapse images and wanted to generate a movie file that you can view in Quicktime, Powerpoint, etc.
+3) What if you had a z-stack image...?
+
 
 <br>
 
@@ -305,6 +315,10 @@ Now, let's write a macro to run all these functions sequentially, by copy-pastin
 
 <br>
 
+Code is available in this repository - see .ijm files above.
+
+<br>
+
 ## Exercise 3 - Streamlining manual analysis when automation isn't working...
 
 <br>
@@ -329,6 +343,11 @@ This might seem silly, but it makes manual analysis so much easier to tackle - y
 For this, we'll write a for-loop to cycle through a folder of images, and we'll use the `waitForUser();` function to pause the script while we perform a measurement. After the image opens, it will be up to you to perform a measurement - maybe you wish to trace the shape of the nuclei, maybe you try to find the longest actin filament in focus, or the furthest mitochondria from the nucleus. Or maybe this is a quality control pre-processing step, where you make a list of good quality images which you will use for downstream analysis...
 
 <br>
+
+Code is available in this repository - see .ijm files above.
+
+<br>
+
 
 ## Some closing thoughts
 
