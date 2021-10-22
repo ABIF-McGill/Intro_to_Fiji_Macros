@@ -53,6 +53,10 @@ This workshop is not the only game in town! There are lots of great resources an
 
 ## Why do biologists write macros/script in Fiji?
 
+
+[Intro slides](https://github.com/ABIF-McGill/Intro_to_Fiji_Macros/blob/main/intro_fiji_macros_slides_.pdf)
+
+
 Fiji allows you to manipulate image data in a myriad of ways to extract biologically relevant information from microscope images. Traditionally, this is done using the graphical user interface (GUI), where you point and click on the different functions that you want to apply to your images. Writing macros helps streamline data processing, extraction and analysis.
 
 Quite simply, the goal of writing macros is the reduce the amount of work and number of clicks required by the user to process images and extract meaningful information. Two main benefits emerge from such streamlining: 1) it makes data processing or analysis much easier, or much less daunting, 2) it can reduce the frequency of human error when analysing multiple images, by reliably applying the same sequence of functions on a set of images. 
@@ -229,6 +233,8 @@ because Channel number 3 does not exist in a two-channel image...
 
 Other potential issues with copy-pasting from the Recorder will be further discussed as we go. In most cases, these are relatively easily addressed by making the scripts a bit more general...
 
+See the whole macro [here](https://github.com/ABIF-McGill/Intro_to_Fiji_Macros/blob/main/ABIF_exercise_1_macro_.ijm)
+
 <br>
 
 **Potential upgrades to Exercise 1**
@@ -315,7 +321,8 @@ Now, let's write a macro to run all these functions sequentially, by copy-pastin
 
 <br>
 
-Code is available in this repository - see .ijm files above.
+
+See the whole [Exercise 2 macro here](https://github.com/ABIF-McGill/Intro_to_Fiji_Macros/blob/main/ABIF_exercise_2_macro_.ijm)
 
 <br>
 
@@ -344,7 +351,8 @@ For this, we'll write a for-loop to cycle through a folder of images, and we'll 
 
 <br>
 
-Code is available in this repository - see .ijm files above.
+
+See the whole [Exercise 3 macro here](https://github.com/ABIF-McGill/Intro_to_Fiji_Macros/blob/main/ABIF_exercise_3_macro_.ijm)
 
 <br>
 
