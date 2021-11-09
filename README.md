@@ -5,6 +5,8 @@ An *illuminate-virtual* interactive workshop organized by the [ABIF](https://www
 
 <br>
 
+### Watch the video ###
+
 A recording of the workshop is available at [https://youtu.be/LlIchxFeHYE](https://youtu.be/LlIchxFeHYE).
 
 <br>
