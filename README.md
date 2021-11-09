@@ -2,6 +2,11 @@
 
 An *illuminate-virtual* interactive workshop organized by the [ABIF](https://www.mcgill.ca/abif/), taking place online on October 21 2021, 2pm - 4pm EST.
 
+
+<br>
+
+A recording of the workshop is available at [https://youtu.be/LlIchxFeHYE](https://youtu.be/LlIchxFeHYE).
+
 <br>
 
 # What you need for this workshop
