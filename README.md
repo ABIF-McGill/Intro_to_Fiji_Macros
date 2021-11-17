@@ -39,11 +39,11 @@ Before the workshop, please give this readme file a quick read, and make sure yo
 
 <br>
 
-If you have never worked with Fiji, or are very unfamiliar with fluorescence images, please check out a few introductory videos to using Fiji:
+If you have never worked with Fiji, or are very unfamiliar with processing fluorescence images, please check out a few introductory videos to using Fiji:
 
 * [Bioimage Analysis with Fiji](https://www.youtube.com/embed/Akedfyp5AxY) and [Filters and Segmentation](https://www.youtube.com/embed/LT8L3vSLQ2Q?start=0&end=1712) are two fantastic talks by Robert Haase introducing Fiji and some analysis functions
 
-* [Introduction to Fiji/ImageJ](https://www.youtube.com/watch?v=3Yfk9yjt3CA&t=120s) is a virtual illuminate workshop we held in May 2020, using data and a general guide found [in this repository](https://github.com/ABIF-McGill/IPN_summer_course_2021), where participants performed some of the functions discussed in the aforementioned talks
+* [Introduction to Fiji/ImageJ](https://www.youtube.com/watch?v=3Yfk9yjt3CA&t=120s) is a virtual illuminate workshop we held in May 2020, using data and a general guide found [in this repository](https://github.com/ABIF-McGill/Intro_to_Fiji_Basics), where participants performed some of the functions discussed in the aforementioned talks.
 
 
 
