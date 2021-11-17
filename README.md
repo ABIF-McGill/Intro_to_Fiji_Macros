@@ -9,6 +9,9 @@ An *illuminate-virtual* interactive workshop organized by the [ABIF](https://www
 
 A recording of the workshop is available at [https://youtu.be/LlIchxFeHYE](https://youtu.be/LlIchxFeHYE).
 
+[![Intro to writing macros in Fiji workshop](https://user-images.githubusercontent.com/65409468/142238320-5f97bfbc-759b-4a22-b069-e4d533b2d5e2.png)](https://www.youtube.com/watch?v=LlIchxFeHYE)
+
+
 <br>
 
 # What you need for this workshop
